@@ -21,9 +21,8 @@ function generatePassword() {
   var inputLowercase = "abcdefghijklmnopqrstuvwxyz".split("");
   var inputUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   var inputNumber = "0123456789".split("");
-  // Q: which characters are considered special characters? Is there a specified #?
   var inputSpecial = "!@#$%^&*_-?~+".split("");
-  var possiblePwds = {};
+  var possiblePwds = {}; //this is the object?
 
   console.log(inputLowercase);
   console.log(inputUppercase);
@@ -34,33 +33,49 @@ function generatePassword() {
 
   //button click needs to initiate first alert
 
-  var pwdLength = prompt("How long should your password be?");
+  var pwdLength = prompt(
+    "How many characters should your password be? Choose a length between 8 and 128."
+  );
   var yesLowercase = confirm("Would you like to include lowercase letters?");
   var yesUppercase = confirm("Would you like to include uppercase letters?");
   var yesNumbers = confirm("Would you like to include numbers?");
   var yesSpecial = confirm("Would you like to include special characters?");
 
   //for every "ok," need to use at least one character type-- bonus would be how many
+  //don't need an object-- just look at the values of yesUpper and yesLower, pull the if statement inside the for loop and conditionally choose one of them
 
-  if (yesLowercase) {
-    possiblePwds.lower = inputLowercase;
-  }
-  if (yesUppercase) {
-    possiblePwds.upper = inputUppercase;
-  }
-  if (yesNumbers) {
-    possiblePwds.numbers = inputNumber;
-  }
-  if (yesSpecial) {
-    possiblePwds.special = inputSpecial;
-  }
+
+
   //NEXT: Loop through and guarantee one of each character
   //repeats lower upper number special in a loop until it reaches pwdLength-- but also depends on what the user selects as wanting to be in; build one four-character pwd bc that also depends on what types of characters the user chooses
   // how to make sure it includes at least one of each kind a "yes" is
   // how to determine a length
   console.log(possiblePwds);
   //for loop for length of password since prompt already gives a number
-  for (var i = 1; i <= 129; i++) {
-    numbers.push(i);
+  for (var i = 1; i < pwdLength; i++) {
+    numbers.push(i); //idk what this is
+    if (i === pwdLength-4) break;
+   
+    if (yesLowercase) {
+      possiblePwds.lower = inputLowercase;
+      //need to add
+
+      selLowercase =
+      possiblePwds[Math.floor(Math.random() * inputLowercase.length)
+
+    }
+    else (yesLowercase).null //doesn't run
+    
+    
+    if (yesUppercase) {
+      possiblePwds.upper = inputUppercase;
+    }
+    if (yesNumbers) {
+      possiblePwds.numbers = inputNumber;
+    }
+    if (yesSpecial) {
+      possiblePwds.special = inputSpecial;
+    }
+
   }
 }
