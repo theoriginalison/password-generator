@@ -35,30 +35,44 @@ function userInputFunction() {
 
 function generatePassword() {
   var userInput = userInputFunction();
-  console.log(userInput);
 
   var possibleCharacters = [];
-  var guaranteedCharacters = [];
+  var password = "";
   if (userInput.lower) {
-    possibleCharacters = possibleCharacters.concat(inputLowercase);
+    possibleCharacters.push(inputLowercase);
   }
   if (userInput.upper) {
-    possibleCharacters = possibleCharacters.concat(inputUppercase);
+    possibleCharacters.push(inputUppercase);
   }
   if (userInput.numbers) {
-    possibleCharacters = possibleCharacters.concat(inputNumber);
+    possibleCharacters.push(inputNumber);
   }
   if (userInput.special) {
-    possibleCharacters = possibleCharacters.concat(inputSpecial);
+    possibleCharacters.push(inputSpecial);
   }
 
   for (var i = 0; i < userInput.length; i++) {
-    guaranteedCharacters.push(
-      possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)]
-    );
+    if (i <= possibleCharacters.length - 1) {
+      var charTypeArr = possibleCharacters[i];
+      var randChoice =
+        charTypeArr[Math.floor(Math.random() * charTypeArr.length)];
+
+      password += randChoice;
+    } else {
+      var randTypeArr =
+        possibleCharacters[
+          Math.floor(Math.random() * possibleCharacters.length)
+        ];
+
+      console.log(randTypeArr);
+      var randChoice =
+        randTypeArr[Math.floor(Math.random() * randTypeArr.length)];
+      console.log(randChoice);
+      password += randChoice;
+    }
   }
 
-  console.log(guaranteedCharacters);
+  return password;
 }
 
 //something needs to go here so the guaranteedCharacters are printed in the box-- it is the #password in the HTML
