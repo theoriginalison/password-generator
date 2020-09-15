@@ -64,10 +64,8 @@ function generatePassword() {
           Math.floor(Math.random() * possibleCharacters.length)
         ];
 
-      console.log(randTypeArr);
       var randChoice =
         randTypeArr[Math.floor(Math.random() * randTypeArr.length)];
-      console.log(randChoice);
       password += randChoice;
     }
   }
