@@ -3,10 +3,8 @@ var inputUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var inputNumber = "0123456789".split("");
 var inputSpecial = "!@#$%^&*_-?~+".split("");
 
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
 
@@ -72,7 +70,5 @@ function generatePassword() {
 
   return password;
 }
-
-//something needs to go here so the guaranteedCharacters are printed in the box-- it is the #password in the HTML
 
 generateBtn.addEventListener("click", writePassword);

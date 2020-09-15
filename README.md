@@ -2,7 +2,8 @@
 
 Homework for Week 3
 
-[LINK TO PAGE](https:///)
+[LINK TO GITHUB](https://github.com/theoriginalison/password-generator)
+[LINK TO DEPLOYED PAGE](https://theoriginalison.github.io/password-generator/)
 
 ## Table of Contents
 
